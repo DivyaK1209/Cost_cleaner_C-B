@@ -46,7 +46,7 @@ if uploaded_file:
 
         # ✅ Download section
         output = BytesIO()
-        with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+        with pd.ExcelWriter(output, engine='openpyxl') as writer:
             cleaned_df.to_excel(writer, index=False, sheet_name='Cleaned Data')
         output.seek(0)  # VERY IMPORTANT!
 
